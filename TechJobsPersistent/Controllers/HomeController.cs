@@ -24,7 +24,7 @@ namespace TechJobsPersistent.Controllers
 
         public IActionResult Index()
         {
-            List<Job> jobs = context.Jobs.Include(j => j.Employer).ToList();
+            List<Job> jobs = context.Jobs.Include(j => j.Employer).Include(j =>j.JobSkills).ToList();
 
             return View(jobs);
         }
@@ -48,7 +48,7 @@ namespace TechJobsPersistent.Controllers
                 Job newJob = new Job
                 {
                     Name = addJobViewModel.Name,
-                    Id = addJobViewModel.Id,
+                    //Id = addJobViewModel.Id,
                     Employer = newEmployer
                 };
                 
@@ -56,7 +56,7 @@ namespace TechJobsPersistent.Controllers
                 {
                     JobSkill newJobSkill = new JobSkill
                     {
-                        JobId = newJob.Id,
+                        //JobId = newJob.Id,
                         Job = newJob,
                         SkillId = int.Parse(selected)
                     };

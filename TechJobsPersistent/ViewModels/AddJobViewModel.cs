@@ -8,7 +8,7 @@ using TechJobsPersistent.Models;
 
 namespace TechJobsPersistent.ViewModels
 {
-    public class AddJobViewModel : Controller
+    public class AddJobViewModel
     {
         public string Name { get; set; }
         public int Id { get; set; }

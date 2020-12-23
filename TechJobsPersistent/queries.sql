@@ -11,4 +11,8 @@ FROM employers
 WHERE location = "St. Louis City";
 
 #Part 3
-
+SELECT name, description
+FROM skills
+INNER JOIN jobskills ON skills.Id = jobskills.SkillId
+WHERE jobskills.JobId IS NOT NULL
+ORDER BY name;
